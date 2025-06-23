@@ -1,2 +1,9 @@
 # OS_250622
-my OS repo
+
+## Goal
+    complete mini OS
+
+## 0623 Entered Protected Mode
+    to study Assembly and need OS books
+    next : move Kernel the memory
+
