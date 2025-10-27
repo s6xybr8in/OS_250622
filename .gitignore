@@ -1,2 +1,5 @@
 *.bin
 *.txt
+*.img
+*.o
+GEMINI.md
