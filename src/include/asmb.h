@@ -1,0 +1,14 @@
+#ifndef ASMB_H
+#define ASMB_H
+
+static inline void outb(unsigned short port, unsigned char val) {
+    asm volatile ( "outb %0, %1" : : "a"(val), "Nd"(port) );
+}
+
+// x86 I/O 포트에서 데이터를 읽는 함수
+static inline unsigned char inb(unsigned short port) {
+    unsigned char ret;
+    asm volatile ( "inb %1, %0" : "=a"(ret) : "Nd"(port) );
+    return ret;
+}
+#endif

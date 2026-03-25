@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "OS Run (QEMU)",
+            "type": "shell",
+            "command" : "bash scripts/run.sh",
+            // "command": "tmux has-session -t os_dev 2>/dev/null && tmux kill-session -t os_dev; tmux new-session -d -s os_dev 'make run'; tmux attach-session -t os_dev",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
