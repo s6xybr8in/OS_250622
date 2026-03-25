@@ -1,5 +1,5 @@
-#include "../include/print.h"
-#include "../include/asmb.h"
+#include "print.h"
+#include "asmb.h"
 
 #define PORT 0x3f8          // COM1 시리얼 포트 주소
 

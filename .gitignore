@@ -1,0 +1,24 @@
+# Build Artifacts
+bin/
+build/
+
+# Object files and binaries
+*.o
+*.bin
+*.iso
+*.img
+
+# Debug & Temporary files
+*.log
+gdb.txt
+.gdb_history
+*~
+*.swp
+
+# IDE Settings (VS Code)
+.vscode/ipch/
+.vscode/.browse.vc.db
+.vscode/c_cpp_properties.json
+
+GEMINI.md
+

@@ -1,11 +1,14 @@
 // kernel.c
-#include "../include/print.h"
-#include "../include/init.h"
-
+#include "init.h"
+#include "print.h"
+#include <stdint.h>
 // 커널 메인 함수
-void kmain() {
+void kmain()
+{
     init();
     print("Hello, OS World! (Serial Console Ready)\n");
-
-    while(1); // 무한 루프
+    uint8_t i;
+    i = 1;
+    while (1)
+        ; // 무한 루프
 }

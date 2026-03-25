@@ -27,4 +27,11 @@ SECTIONS
         *(COMMON)
         *(.bss)
     }
+    /* [중요] 리눅스 컴파일러가 넣는 불필요한 섹션들 제거 */
+    /DISCARD/ :
+    {
+        *(.comment)
+        *(.eh_frame)
+        *(.note.gnu.build-id)
+    }
 }
