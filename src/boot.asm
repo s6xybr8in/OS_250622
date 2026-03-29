@@ -23,9 +23,7 @@ _start:
     call kmain
 
 ; 혹시 kmain이 종료되면 무한 루프
-.hang:
-    hlt
-    jmp .hang
+jmp $
 
 section .bss
 align 16
