@@ -29,6 +29,11 @@ void print(char *str)
 void print_int(int32_t val)
 {
     char buf[BUF_MAX];
+    if (val == 0) {
+        write_serial('0');
+        return;
+    }
+
     int i = 0;
     while (val > 0) {
         buf[i++] = (val % 10) + '0';
@@ -40,6 +45,10 @@ void print_int(int32_t val)
 }
 void print_hex(int32_t val)
 {
+    if (val == 0) {
+        write_serial('0');
+        return;
+    }
     char table[] = "0123456789ABCDEF";
     char buf[BUF_MAX];
     int i = 0;

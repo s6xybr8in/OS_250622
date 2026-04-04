@@ -3,6 +3,17 @@
 #include <stdint.h>
 
 extern void gdt_flush(uint32_t gdtr_ptr);
+extern void idt_flush(uint32_t idtr_ptr);
+
+static inline void cli()
+{
+    asm volatile("cli");
+}
+
+static inline void sti()
+{
+    asm volatile("sti");
+}
 
 static inline void outb(unsigned short port, unsigned char val)
 {

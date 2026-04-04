@@ -37,10 +37,10 @@ void init_gdt()
     my_gdtr.base = (uint32_t)gdts;
     my_gdtr.size = sizeof(gdts) - 1;
     set_gdt(0, 0, 0, 0, 0);
-    set_gdt(1, 0, 0xFFFFF, 0x9A, 0xCF);
-    set_gdt(2, 0, 0xFFFFF, 0x92, 0xCF);
-    set_gdt(3, 0, 0xFFFFF, 0xFA, 0xCF);
-    set_gdt(4, 0, 0xFFFFF, 0xF2, 0xCF);
+    set_gdt(1, 0, 0xFFFFF, 0x9A, 0xCF); // ring 0 code
+    set_gdt(2, 0, 0xFFFFF, 0x92, 0xCF); // ring 0 data
+    set_gdt(3, 0, 0xFFFFF, 0xFA, 0xCF); // ring 3 code
+    set_gdt(4, 0, 0xFFFFF, 0xF2, 0xCF); // ring 3 data
     // set_gdt(5,&tss,sizeof(tss)-1,0x89,0) // Task Sate Segment
 
     gdt_flush((uint32_t)&my_gdtr);
