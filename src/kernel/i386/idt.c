@@ -66,6 +66,7 @@ void init_idt()
     set_idt_gate(46, (uint32_t)isr46, 0x8E, KERNEL_CODE_SELECTOR);
 
     idt_flush((uint32_t)&idt);
+    inb(0x60);
     sti();
 }
 

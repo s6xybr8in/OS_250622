@@ -3,6 +3,9 @@
 #define MAX 47
 #define KERNEL_CODE_SELECTOR 0x08
 #include <kernel.h>
+
+extern void idt_flush(uint32_t idtr_ptr);
+
 struct idt_entry {
     uint16_t offset_low;
     uint16_t selector;

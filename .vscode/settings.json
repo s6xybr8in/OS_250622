@@ -1,4 +1,10 @@
 {
     "C_Cpp.intelliSenseEngine": "default",
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "isr.h": "c",
+        "i386.h": "c",
+        "serial.h": "c",
+        "pit.h": "c"
+    }
 }

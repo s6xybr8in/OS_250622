@@ -1,5 +1,5 @@
 #include "isr.h"
-
+#define IRQ0 32
 void isr_handler(register_t *reg)
 {
     if (reg->int_no < 32) {
@@ -9,10 +9,38 @@ void isr_handler(register_t *reg)
         while (1)
             ;
     } else if (reg->int_no < 47) {
-        printf("Keyboard Interupt %d occured!, EIP :  %x", reg->int_no,
-               reg->eip);
-        outb(PIC1_DATA, PIC_EOI);
+        // uint8_t a = inb(0x60);
+        // printf("IRQ Interupt %d occured!, EIP :  %d\n", reg->int_no);
+        if (reg->int_no == IRQ0) { // timer
+            timer_handler();
+        }
+        if (reg->int_no == IRQ0 + 4) { // COM1
+            com1_handler();
+        }
+
+        outb(PIC1_COMMAND, PIC_EOI);
         return;
     } else {
     }
+}
+bool flag = false;
+void com1_handler()
+{
+    uint8_t iir = inb(0x3F8 + 2);
+    uint8_t buf = inb(0x3f8);
+    if (iir == 0xc2) {
+        if (flag)
+            return;
+        flag = true;
+    }
+
+    // printf("COM1 Interupt IIR -> %x\n", iir);
+    if (buf) {
+        printf("%s", &buf);
+    }
+}
+
+void timer_handler()
+{
+    printf("Timer Interupt! %d\n", timer_count++);
 }

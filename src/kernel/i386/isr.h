@@ -3,6 +3,19 @@
 #include <i386.h>
 #include <kernel.h>
 
+typedef struct register_t {
+    uint32_t ds;
+    uint32_t edi, esi, ebp, esp, ebx, edx, ecx, eax; // pusha
+    uint32_t int_no, err_code;
+    uint32_t eip, cs, eflags, useresp, ss;
+} register_t;
+
+uint64_t timer_count = 0;
+
+void isr_handler(register_t *reg);
+void com1_handler();
+void timer_handler();
+
 extern void isr0();
 extern void isr1();
 extern void isr2();
@@ -50,12 +63,4 @@ extern void isr43();
 extern void isr44();
 extern void isr45();
 extern void isr46();
-
-typedef struct register_t {
-    uint32_t ds;
-    uint32_t edi, esi, ebp, esp, ebx, edx, ecx, eax; // pusha
-    uint32_t int_no, err_code;
-    uint32_t eip, cs, eflags, useresp, ss;
-} register_t;
-void isr_handler(register_t *reg);
 #endif

@@ -26,6 +26,6 @@ void pic_remap(int offset1, int offset2)
     outb(PIC2_DATA, ICW4_8086);
     io_wait();
 
-    outb(PIC1_DATA, 0xFD);
+    outb(PIC1_DATA, 0xFF & ~(1 << 4 | 1 << 1 | 1));
     outb(PIC2_DATA, 0xFF);
 }
