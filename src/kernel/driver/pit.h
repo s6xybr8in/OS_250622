@@ -5,6 +5,7 @@
 #define CH1 PORT + 1
 #define CH2 PORT + 2
 #define MODE_COMMAND_REG PORT + 3
+#include "../kernel.h"
 /*
 MODE_COMMAND_REG
 비트 사용법

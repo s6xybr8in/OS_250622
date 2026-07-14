@@ -1,5 +1,4 @@
 #include "com1.h"
-#include "asmb.h"
 #define PORT 0x3f8
 
 void init_com1()

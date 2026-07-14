@@ -2,8 +2,8 @@
 #define IDT_H
 #define MAX 47
 #define KERNEL_CODE_SELECTOR 0x08
-#include <kernel.h>
-
+#include "../kernel.h"
+#include "isr.h"
 extern void idt_flush(uint32_t idtr_ptr);
 
 struct idt_entry {

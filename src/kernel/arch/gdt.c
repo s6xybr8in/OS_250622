@@ -1,6 +1,4 @@
 #include "gdt.h"
-#include "asmb.h"
-#include <stdint.h>
 
 struct gdtr {
     uint16_t size;

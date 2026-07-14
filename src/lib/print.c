@@ -1,5 +1,5 @@
 #include "print.h"
-#include "asmb.h"
+#include "io.h"
 #include <stdbool.h>
 #define PORT 0x3f8 // COM1 시리얼 포트 주소
 #define BUF_MAX 16

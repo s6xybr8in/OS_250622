@@ -13,20 +13,23 @@ align 4
 
 section .text
 global _start
+global _memory_info
 extern kmain
+
 
 _start:
     ; 스택 설정 (esp 레지스터에 스택 끝 주소 할당)
     mov esp, stack_top
-
+    mov [_memory_info], ebx
     ; C 언어 메인 함수 호출
     call kmain
-
+    
 ; 혹시 kmain이 종료되면 무한 루프
 jmp $
 
 section .bss
 align 16
+_memory_info: dd 0
 stack_bottom:
     resb 16384 ; 16KB 스택 예약
 stack_top:

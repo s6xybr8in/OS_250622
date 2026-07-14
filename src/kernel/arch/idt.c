@@ -1,8 +1,4 @@
 #include "idt.h"
-#include "isr.h"
-#include "print.h"
-#include <asmb.h>
-#include <stdint.h>
 struct idt_entry idts[MAX];
 struct idtr idt;
 
@@ -64,7 +60,6 @@ void init_idt()
     set_idt_gate(44, (uint32_t)isr44, 0x8E, KERNEL_CODE_SELECTOR);
     set_idt_gate(45, (uint32_t)isr45, 0x8E, KERNEL_CODE_SELECTOR);
     set_idt_gate(46, (uint32_t)isr46, 0x8E, KERNEL_CODE_SELECTOR);
-
     idt_flush((uint32_t)&idt);
     inb(0x60);
     sti();

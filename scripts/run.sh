@@ -5,6 +5,9 @@ SESSION="os_dev"
 # 1. 빌드
 make clean
 make
+make run
+
+'''
 
 # 2. 기존 세션 제거
 pkill qemu
@@ -34,3 +37,6 @@ tmux send-keys -t $SESSION:main.1 \
 
 # 8. attach
 tmux attach -t $SESSION
+
+
+'''

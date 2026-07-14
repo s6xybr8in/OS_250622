@@ -1,7 +1,7 @@
 #ifndef I386_H
 #define I386_H
-#include "../kernel/i386/gdt.h"
-#include "../kernel/i386/idt.h"
-#include "../kernel/i386/isr.h"
-#include "../kernel/i386/pic.h"
+#include "../kernel/arch/gdt.h"
+#include "../kernel/arch/idt.h"
+#include "../kernel/arch/isr.h"
+#include "../kernel/arch/pic.h"
 #endif

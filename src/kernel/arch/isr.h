@@ -1,7 +1,7 @@
 #ifndef ISR_H
 #define ISR_H
+#include "../kernel.h"
 #include <i386.h>
-#include <kernel.h>
 
 typedef struct register_t {
     uint32_t ds;
@@ -10,7 +10,7 @@ typedef struct register_t {
     uint32_t eip, cs, eflags, useresp, ss;
 } register_t;
 
-uint64_t timer_count = 0;
+// uint64_t timer_count = 0;
 
 void isr_handler(register_t *reg);
 void com1_handler();

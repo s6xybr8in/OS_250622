@@ -39,8 +39,9 @@ void com1_handler()
         printf("%s", &buf);
     }
 }
+uint32_t timer_count = 0;
 
 void timer_handler()
 {
-    printf("Timer Interupt! %d\n", timer_count++);
+    // printf("Timer Interupt! %d\n", timer_count++);
 }

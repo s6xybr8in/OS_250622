@@ -6,3 +6,4 @@ BreakBeforeBraces: Custom
 BraceWrapping:
   AfterFunction: true
   AfterControlStatement: MultiLine
+ReflowComments: false

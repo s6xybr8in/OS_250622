@@ -5,6 +5,7 @@ SECTIONS
 {
     /* 1MB 지점에서 시작 */
     . = 1M;
+    _kernel_start = .;
 
     .text BLOCK(4K) : ALIGN(4K)
     {
@@ -32,6 +33,8 @@ SECTIONS
     {
         *(.comment)
         *(.eh_frame)
+        
         *(.note.gnu.build-id)
     }
+    _kernel_end = .;   
 }
